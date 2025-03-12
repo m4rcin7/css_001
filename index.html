@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nowoczesny Przycisk</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #b4b4b4;
+        transition: background-color 0.3s ease;
+      }
+
+      .dark-mode {
+        background-color: #2d2d2d;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #f07bfb, #8e1de8);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn:hover {
+        background: linear-gradient(45deg, #8e1de8, #f07bfb);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+      }
+
+      .dark-mode .btn {
+        background: linear-gradient(45deg, #f07bfb, #8e1de8);
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .dark-mode .btn:hover {
+        background: linear-gradient(45deg, #8e1de8, #f07bfb);
+        box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn" id="toggle-btn">Click me!</button>
+    </div>
+
+    <script>
+      const toggleButton = document.getElementById("toggle-btn");
+      let isDarkMode = false;
+
+      toggleButton.addEventListener("click", () => {
+        isDarkMode = !isDarkMode;
+        document.body.classList.toggle("dark-mode", isDarkMode);
+      });
+    </script>
+  </body>
+</html>
